@@ -13,6 +13,7 @@ On public host, run:
 ```
   docker run -d \
     -e ROOT_PASS=<your_password> \
+    -e PASSWORD_MODE=true \
     -p <your_sshd_port>:22 \
     -p <forwarding_port>:1080 \
     tifayuki/reverse-ssh-tunnel
@@ -22,7 +23,9 @@ Parameters:
   <your_password> is the password used for NATed host to connect the public host
   <your_sshd port> is the port for NATed host to connect to
   <forwarding port> is the port allows others to access
-```
+```  
+If you want your NATed Host only to connect with Key Authorisation, you can remove the environment flag ```PASSWORD_MODE```
+
 
 On NATed Host, run:
 
